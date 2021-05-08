@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: $Font-Size;
+  font-family: $Font-Barlow-Condensed;
+  min-height: 100vh;
+  max-width: 90rem;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-js-c {
+    justify-self: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+@keyframes FlowDown {
+  0% {
+    background: red;
+    transform: rotate(30deg);
+  }
+
+  50% {
+    background: orange;
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    background: initial;
+    transform: rotate(180deg);
+  }
+}
+
+.header__menu {
+  animation-name: FlowDown;
+  animation-duration: 10s;
+  animation: timing-function cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.btn {
+  max-width: 9.5625rem;
+  background-color: $btn-red;
+  padding: 1rem 1.3rem;
+  color: $Light-Grayish-Blue;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
